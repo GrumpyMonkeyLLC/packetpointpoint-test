@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PacketPoint Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>PacketPoint Technologies</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Let's discuss how we can help transform your network infrastructure</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <h3>📍 Office Location</h3>
+                        <p>123 Network Drive<br>
+                        Tech Valley, CA 94025<br>
+                        United States</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 Phone</h3>
+                        <p>Main: (555) 123-4567<br>
+                        Support: (555) 123-4568<br>
+                        Sales: (555) 123-4569</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p>General Inquiries: info@packetpoint.tech<br>
+                        Support: support@packetpoint.tech<br>
+                        Sales: sales@packetpoint.tech</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🕐 Business Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM PST<br>
+                        Saturday: 9:00 AM - 2:00 PM PST<br>
+                        Sunday: Closed<br>
+                        <br>
+                        Emergency Support: 24/7/365</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Please Select</option>
+                                <option value="network-design">Network Design & Implementation</option>
+                                <option value="cybersecurity">Cybersecurity Solutions</option>
+                                <option value="cloud">Cloud Services</option>
+                                <option value="managed-it">Managed IT Services</option>
+                                <option value="optimization">Network Optimization</option>
+                                <option value="disaster-recovery">Disaster Recovery</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2>Visit Our Office</h2>
+            <div class="map-placeholder">
+                <p>📍 123 Network Drive, Tech Valley, CA 94025</p>
+                <p>Interactive map would be displayed here</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="support-callout">
+        <div class="container">
+            <h2>Need Immediate Support?</h2>
+            <p>Our technical support team is available 24/7 for existing clients</p>
+            <div class="support-options">
+                <div class="support-option">
+                    <h3>Emergency Support</h3>
+                    <p>Critical issues requiring immediate attention</p>
+                    <a href="tel:5551234568" class="btn btn-secondary">Call Now</a>
+                </div>
+                <div class="support-option">
+                    <h3>Submit a Ticket</h3>
+                    <p>Non-urgent technical support requests</p>
+                    <a href="mailto:support@packetpoint.tech" class="btn btn-secondary">Email Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PacketPoint Technologies</h3>
+                    <p>Leading provider of enterprise network solutions</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@packetpoint.tech</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PacketPoint Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
