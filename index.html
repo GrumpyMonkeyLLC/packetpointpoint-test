@@ -3,21 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PacketPoint Technologies - Network Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Buckeye Threads, Inc. | Industrial Fasteners & Threaded Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero {
+            background: linear-gradient(to bottom, var(--light-gray) 0%, var(--white) 100%);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .tagline-sub {
+            font-size: 1.25rem;
+            color: var(--steel);
+            font-style: italic;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--steel);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .features {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--charcoal);
+            font-weight: 700;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--white);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--charcoal);
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--steel);
+        }
+
+        .stats {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #1a1d21 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.02) 2px,
+                    rgba(255,255,255,0.02) 4px
+                );
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.95rem;
+            color: var(--silver);
+        }
+
+        .service-card,
+        .feature-item {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        .feature-item:nth-child(4) { animation-delay: 0.4s; }
+        .feature-item:nth-child(5) { animation-delay: 0.5s; }
+        .feature-item:nth-child(6) { animation-delay: 0.6s; }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
+    <header class="header">
         <div class="container">
-            <div class="nav-brand">
-                <h1>PacketPoint Technologies</h1>
+            <div class="header-content">
+                <div class="company-info">
+                    <h1><a href="index.html">Buckeye Threads, Inc.</a></h1>
+                    <div class="contact-info">
+                        3554 (REAR) S. CLEVELAND-MASSILLON ROAD • NORTON, OH 44203<br>
+                        PHONE: (330) 825-2411 • FAX: (330) 825-2413 • EMAIL: <a href="mailto:bti@neo.rr.com">bti@neo.rr.com</a><br>
+                        <strong>NEW Mailing Address:</strong> P.O. Box 1452 Norton, Ohio 44203
+                    </div>
+                </div>
             </div>
-            <ul class="nav-menu">
+        </div>
+    </header>
+
+    <nav class="nav-main">
+        <div class="container">
+            <ul class="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="distinctives.html">Distinctives</a></li>
+                <li><a href="quality.html">Quality</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="surplus.html">Surplus</a></li>
             </ul>
         </div>
     </nav>
@@ -25,11 +249,22 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Enterprise Network Solutions</h2>
-                <p>Empowering businesses with cutting-edge network infrastructure, security, and cloud solutions</p>
-                <div class="cta-buttons">
-                    <a href="services.html" class="btn btn-primary">Our Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Get Started</a>
+                <h2 class="tagline">BOLTS • NUTS • SCREWS • WASHERS • RODS • ANCHORS • CUTTING TOOLS</h2>
+                <p class="tagline-sub">"Customers are the Nuts and Bolts of our Business"</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Standard & Special Threaded Fasteners</h3>
+                        <p>Comprehensive inventory of standard items plus custom fabrication to your specifications</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Next Day Delivery</h3>
+                        <p>Hard-to-find sizes delivered fast. We understand your project timelines.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Custom Specials</h3>
+                        <p>Specials made to your print with precision manufacturing</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,65 +272,101 @@
 
     <section class="features">
         <div class="container">
-            <h2>Why Choose PacketPoint?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Enterprise Security</h3>
-                    <p>Advanced threat protection and network security solutions to keep your data safe</p>
-                </div>
-                <div class="feature-card">
+            <h2>Why Buckeye Threads?</h2>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>ISO 9001:2000 Quality</h3>
+                        <p>Quality manual conforming to international standards</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">★</div>
+                    <div class="feature-content">
+                        <h3>Veteran-Owned</h3>
+                        <p>A proud veteran-owned family business</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">42</div>
+                    <div class="feature-content">
+                        <h3>Years of Service</h3>
+                        <p>Over 42 years of trusted service</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">📧</div>
+                    <div class="feature-content">
+                        <h3>Easy Ordering</h3>
+                        <p>E-mail, call or fax us your requirements</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <div class="feature-content">
+                        <h3>Cutting Tools</h3>
+                        <p>Complete line of industrial cutting tools and accessories</p>
+                    </div>
+                </li>
+                <li class="feature-item">
                     <div class="feature-icon">⚡</div>
-                    <h3>High Performance</h3>
-                    <p>Optimized network infrastructure for maximum speed and reliability</p>
+                    <div class="feature-content">
+                        <h3>Fast Response</h3>
+                        <p>Quick quotes and responsive customer service</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>42+</h3>
+                    <p>Years in Business</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Cloud Integration</h3>
-                    <p>Seamless cloud connectivity and hybrid infrastructure solutions</p>
+                <div class="stat-item">
+                    <h3>ISO</h3>
+                    <p>9001:2000 Certified</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>24/7 Monitoring</h3>
-                    <p>Round-the-clock network monitoring and proactive maintenance</p>
+                <div class="stat-item">
+                    <h3>24hr</h3>
+                    <p>Next Day Delivery</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Family Owned</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <nav class="footer-nav">
         <div class="container">
-            <h2>Ready to Transform Your Network?</h2>
-            <p>Let's discuss how PacketPoint can elevate your business infrastructure</p>
-            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+            <ul class="footer-nav-list">
+                <li><a href="history.html">History</a></li>
+                <li><a href="mission.html">Mission</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="employment.html">Employment</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>PacketPoint Technologies</h3>
-                    <p>Leading provider of enterprise network solutions</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@packetpoint.tech</p>
-                    <p>Phone: (555) 123-4567</p>
-                </div>
+                <a href="http://www.stafda.org/" target="_blank" rel="noopener">
+                    <span style="color: var(--silver)">STAFDA Member</span>
+                </a>
+                <span>•</span>
+                <a href="http://www.nfib.com/" target="_blank" rel="noopener">
+                    <span style="color: var(--silver)">NFIB Member</span>
+                </a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 PacketPoint Technologies. All rights reserved.</p>
-            </div>
+            <p>© 2007-2026 Buckeye Threads, Inc. • Provided by <a href="http://www.yodergraphics.com/" target="_blank" rel="noopener">Yoder Graphic Systems, Inc.</a></p>
         </div>
     </footer>
 </body>
